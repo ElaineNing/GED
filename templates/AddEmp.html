@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Employee Information</title>
+	<style>
+		#myVideo {
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			min-width: 100%; 
+			min-height: 100%;
+			filter: blur(8px);
+		}
+
+		.content {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			background: rgba(0, 0, 0, 0.5);
+			color: #f1f1f1;
+			width: 30%;
+			text-align: center;
+			transform: translate(-50%, -50%);
+			padding: 20px;
+		}
+		
+		h1 {
+			font-size: 23px;
+			font-weight: 700;
+			color: #fff;
+			text-align: center;
+			margin-bottom: 30px;
+		}
+		
+		.input {
+			outline: none;
+			font-weight: 700;
+			font-size: 16px;
+			color: #999;
+			text-align: left;
+			padding: 14px 20px;
+			margin-bottom: 15px;
+			width: 100%;
+			display: inline-block;
+			box-sizing: border-box;
+			background: #f7fafc;
+			border: 1px solid #e5e5e5;
+			transition: .3s ease;
+			border-radius: 36px;
+		}
+		
+		.input:focus {
+			background: transparent;
+		}
+		
+		.button1 {
+			font-size: 18px;
+			color: #fff;
+			width: 100%;
+			background: #ff6d00;
+			border: none;
+			padding: 14px 20px;
+			font-weight: 700;
+			border-radius: 36px;
+			transition: 1s ease;
+		}
+		
+		.button1:hover {
+			background: transparent;
+			border: 2px solid white;
+			transition: 1s ease;
+		}
+	</style>
+</head>
+<center>
+	<video autoplay muted loop id="myVideo">
+		<source src="video.mp4" type="video/mp4">
+	</video>
+	<font color="black" size="4" style="font-family: arial">
+
+		<body bgcolor="lightgrey">
+		
+			<div class="content">
+			
+				<h1>GED Employee</h1>
+			
+				<form action="/addemp" autocomplete="on" method = "POST" enctype="multipart/form-data">
+
+					<input type="number" class="input" name="emp_id" autofocus size="40" placeholder="Employee ID">
+
+					<input type="text" class="input" name="first_name" placeholder="First Name">
+
+					<input type="text" class="input" name="last_name" placeholder="Last Name">
+
+					<input type="text" class="input" name="pri_skill" placeholder="Primary Skills">
+
+					<input type="text" class="input" name="location" placeholder="Location">
+					
+					<input type="number" class="input" name="OT" placeholder="Overtime (OT) in hours">
+					
+					Allowance: &nbsp;
+					<input type="checkbox" id="a1" name="allowance" value="Food"><label for="a1"> Food</label> &nbsp;
+					<input type="checkbox" id="a2" name="allowance" value="Transportation" style="margin-bottom: 15px;"><label for="a2"> Transportation</label><br>
+					
+					<select name="insurance" id="ins" class="input">
+						<option value="Basis">Basis Insurance</option>
+						<option value="Premium">Premium Insurance</option>
+					</select>
+
+					<input type=file name="emp_image_file" class="input">
+
+					<button type="submit" class="button1">Add Employee</button><br><br>
+
+					<a href="/GetEmp.html">
+						<button type="submit" class="button1">View Employee List</button>
+					</a>
+				</form>
+				<!--<a href="/about">About Us</a>-->
+			</div>
+		</body>
+
+	</font>
+</center>
+</html>
