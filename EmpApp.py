@@ -39,8 +39,8 @@ def AddEmp():
     pri_skill = request.form['pri_skill']
     location = request.form['location']
     ot = request.form['ot']
-	insurance = request.form['insurance']
-	allowance = request.form['allowance']
+    insurance = request.form['insurance']
+    allowance = request.form['allowance']
     emp_image_file = request.files['emp_image_file']
 
     insert_sql = "INSERT INTO employee VALUES (%s, %s, %s, %s, %s)"
