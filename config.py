@@ -1,6 +1,6 @@
 customhost = "geddatabase.cavyhltr1yt8.us-east-1.rds.amazonaws.com"
 customuser = "GEDuser"
 custompass = "GEDuser123"
-customdb = "geddatabase"
+customdb = "GEDdatabase"
 custombucket = "elainejoydaniel-bucket"
 customregion = "us-east-1"
