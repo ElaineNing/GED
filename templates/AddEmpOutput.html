@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+		#myVideo {
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			min-width: 100%; 
+			min-height: 100%;
+			filter: blur(8px);
+		}
+
+		.content {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			background: rgba(0, 0, 0, 0.5);
+			color: #f1f1f1;
+			width: 80%;
+			text-align: center;
+			transform: translate(-50%, -50%);
+			padding: 20px;
+		}
+		
+		.button1 {
+			font-size: 18px;
+			color: #fff;
+			width: 30%;
+			background: #ff6d00;
+			border: none;
+			padding: 14px 20px;
+			font-weight: 700;
+			border-radius: 36px;
+			transition: 1s ease;
+		}
+		
+		.button1:hover {
+			background: transparent;
+			border: 2px solid white;
+			transition: 1s ease;
+		}
+		</style>
+		</head>
+<center>
+	<font color="black" size="4" style="font-family: arial">
+		
+		<body bgcolor="lightgrey">
+	<video autoplay muted loop id="myVideo">
+		<source src="video.mp4" type="video/mp4">
+	</video>
+		
+			<div class="content">
+			<h1>SAVE SUCCESSFUL</h1><br>
+			<h2>Following Employee has been added to the database</h2><br>
+			<h2>{{ name }}</h2><br>
+			<title>Add Emp Output</title>
+				<form action="http://3.134.115.108:80/" autocomplete="on" method = "GET">
+
+					<button type="submit" class="button1">GO BACK</button><br><br>
+
+				</form>
+				</div>
+		</body>
+	</font>
+</center>
+</head>
+<body>
+
+</body>
+</html>
