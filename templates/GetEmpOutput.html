@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Employee's Information</title>
+    <style>
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            filter: blur(8px);
+        }
+
+        .content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 30%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 23px;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .input {
+            outline: none;
+            font-weight: 700;
+            font-size: 16px;
+            color: #999;
+            text-align: left;
+            padding: 14px 20px;
+            margin-bottom: 15px;
+            width: 100%;
+            display: inline-block;
+            box-sizing: border-box;
+            background: #f7fafc;
+            border: 1px solid #e5e5e5;
+            transition: .3s ease;
+            border-radius: 36px;
+        }
+
+        .input:focus {
+            background: transparent;
+        }
+
+        .button1 {
+            font-size: 18px;
+            color: #fff;
+            width: 100%;
+            background: #ff6d00;
+            border: none;
+            padding: 14px 20px;
+            font-weight: 700;
+            border-radius: 36px;
+            transition: 1s ease;
+        }
+
+        .button1:hover {
+            background: transparent;
+            border: 2px solid white;
+            transition: 1s ease;
+        }
+    </style>
+</head>
+<body style="text-align:center;font-family: arial" background-color="lightgrey" color="black" size="4">
+
+    <video autoplay muted loop id="myVideo">
+        <source src="freelan.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+        <h1>GED Employee Information</h1>
+        <form>
+            <div class="input">
+                Employee ID:<br> {{ id }} <br><br>
+
+                First Name:<br> {{ fname }} <br><br>
+                
+                Last Name:<br> {{ lname }} <br><br>
+                
+                Primary Skills:<br> {{ interest }} <br><br>
+                
+                Location:<br> {{ location }} <br><br>
+
+                Overtime (OT) in hours:<br> {{ ot }} <br><br>
+
+                Allowance:<br> {{ allowance }} <br><br>
+                
+                Insurance:<br> {{ insurance }} <br><br>
+                
+                Image URL: <br> {{ image_url }} <br><br>
+            </div>
+
+            <button type="submit" formaction="/getemp" class="button1">Return to Employee List</button>
+        </form>
+    </div>
+</body>
+</html>
