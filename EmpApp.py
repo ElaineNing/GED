@@ -26,14 +26,14 @@ def home():
     return render_template('AddEmp.html')
 
 
-@app.route("/about", methods=['POST'])
+@app.route("/about", methods=['GET', 'POST'])
 def about():
-    return render_template('about.html')
+    return render_template('about.html', about=about)
 
 
-@app.route("/GetEmp", methods=['POST'])
+@app.route("/GetEmp", methods=['GET', 'POST'])
 def GetEmp():
-    return render_template('GetEmp.html')
+    return render_template('GetEmp.html', GetEmp=GetEmp)
 
 
 @app.route("/addemp", methods=['POST'])
@@ -57,7 +57,7 @@ def AddEmp():
 
     try:
 
-        cursor.execute(insert_sql, (emp_id, first_name, last_name, pri_skill, location, ot, insurance, allowance))
+        cursor.execute(insert_sql, (emp_id, first_name, last_name, pri_skill, location, phone, ot, insurance, allowance))
         db_conn.commit()
         emp_name = "" + first_name + " " + last_name
         # Uplaod image file in S3 #
@@ -92,3 +92,26 @@ def AddEmp():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=True)
+
+
+@app.route("/fetchdata", methods=['GET', 'POST'])
+def fetchdata():
+    if request.method == 'POST':
+        try:
+            emp_id = request.form['emp_id']
+            cursor = db_conn.cursor()
+            
+            fetch_sql = "SELECT * FROM GEDemployee WHERE emp_id = %s"
+            cursor.execute(fetch_sql,(emp_id))
+            emp = cursor.fetchall()
+            
+            (emp_id, first_name, last_name, pri_skill, location, phone, ot, insurance, allowance) = emp[0]
+             image_url = show_image(custombucket)
+             
+            return render_template('GetEmpOutput.html', emp_id=emp_id, first_name=first_name, last_name=last_name, pri_skill=pri_skill, location=location, phone=phone, ot=ot, insurance=insurance, allowance=allowance)
+        except Exception as e:
+            return render_template('NotFound.html')
+        else:
+            return render_template('AddEmp.html', fetchdata=fetchdata)
+    
+
