@@ -111,7 +111,18 @@ def fetchdata():
             return render_template('GetEmpOutput.html', emp_id=emp_id, first_name=first_name, last_name=last_name, pri_skill=pri_skill, location=location, phone=phone, ot=ot, insurance=insurance, allowance=allowance)
         except Exception as e:
             return render_template('NotFound.html')
-        else:
-            return render_template('AddEmp.html', fetchdata=fetchdata)
+    else:
+        return render_template('AddEmp.html', fetchdata=fetchdata)
+
+
+@app.route("/delete", methods=['GET', 'POST'])
+def delete():
+    emp_id = request.form['emp_id']
+    cursor = db_conn.cursor()
+    delete_emp = "DELETE FROM GEDemployee WHERE emp_id = %s"
+    cursor.execute(delete_emp, (emp_id))
+    db_conn.commit()
+    
+    
     
 
