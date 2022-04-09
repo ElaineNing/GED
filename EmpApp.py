@@ -38,12 +38,13 @@ def AddEmp():
     last_name = request.form['last_name']
     pri_skill = request.form['pri_skill']
     location = request.form['location']
+    phone = request.form['phone']
     ot = request.form['ot']
     insurance = request.form['insurance']
     allowance = request.form['allowance']
     emp_image_file = request.files['emp_image_file']
 
-    insert_sql = "INSERT INTO GEDemployee VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+    insert_sql = "INSERT INTO GEDemployee VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
     cursor = db_conn.cursor()
 
     if emp_image_file.filename == "":
