@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Employee Information</title>
+	<style>		
+		h1 {
+			font-size: 48px;
+			font-weight: 700;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			margin-bottom: 30px;
+			background-image: url("image.jpg");
+			background-repeat: no-repeat;
+			background-size: 100%;
+		}
+		
+		p{
+			margin: 20px;
+		}
+		
+		ul, li{
+			width: 40%;
+		}
+
+		div.card {
+			width: 100%;
+			box-shadow: 0 4px 8px 0 rgb(0 0 0 / 53%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+			text-align: center;
+		}
+
+		div.cContainer {
+			padding: 15px 50px;
+		}
+		
+		.image{
+			width:200px;
+			border-radius: 50%;
+		}
+		
+		.input {
+			outline: none;
+			font-weight: 700;
+			font-size: 16px;
+			color: #999;
+			text-align: left;
+			padding: 14px 20px;
+			margin-bottom: 15px;
+			width: 100%;
+			display: inline-block;
+			box-sizing: border-box;
+			background: #f7fafc;
+			border: 1px solid #e5e5e5;
+			transition: .3s ease;
+			border-radius: 36px;
+		}
+		
+		.input2 {
+			outline: none;
+			font-weight: 700;
+			font-size: 16px;
+			color: #999;
+			text-align: left;
+			padding: 10px 20px;
+			margin-bottom: 15px;
+			width: 100%;
+			display: inline-block;
+			box-sizing: border-box;
+			background: #f7fafc;
+			border: 1px solid #e5e5e5;
+			transition: .3s ease;
+			border-radius: 36px;
+		}
+		
+		.input:focus {
+			background: transparent;
+		}
+		
+		.button1 {
+			font-size: 18px;
+			color: #fff;
+			width: 50%;
+			background: #ff6d00;
+			border: none;
+			padding: 14px 20px;
+			font-weight: 700;
+			border-radius: 36px;
+			transition: 1s ease;
+		}
+		
+		.button1:hover {
+			background: transparent;
+			border: 2px solid #ff6d00;
+			color: #ff6d00;
+			transition: 1s ease;
+		}
+		
+		.content{
+			padding: 20px;
+			background-image: url("image.jpg");
+			background-repeat: no-repeat;
+			background-size: 100%;
+			text-align: center;
+			color: white;
+		}
+	</style>
+</head>
+<center>
+	<font color="black" size="4" style="font-family: arial">
+
+		<body >
+			
+				<h1>About Us</h1>
+				<p style="text-align:center;"> GED is a small company. We have employee database management system that allows it to house all of the important information of employee. Few feature below:</p>
+				<ul>
+					<li>Scaling to meet the demand</li>
+					<li>Disaster Recovery planning</li>
+					<li>Effective distribution of load</li>
+					<li>etc.</li>
+				</ul>
+				
+				<table  style="margin: 80px 0">
+					<tr>
+						<td style="width:30%;">
+							<div class="card">
+								<div class="cContainer">
+									<h3>Elaine Koo</h3>
+									<img src="x.jpg" class="image"><br><br>
+									<b>Leader</b><br>
+									<p>Phone: 0123456787</p>
+									<p>Email: EJ@GED.com</p>
+								</div>
+							</div>
+						</td>
+						<td ></td>
+						<td style="width:30%;">
+							<div class="card">
+								<div class="cContainer">
+									<h3>Sing Joy</h3>
+									<img src="y.jpg" class="image"><br><br>
+									<b>Member</b><br>
+									<p>Phone: 0123456788</p>
+									<p>Email: SJ@GED.com</p>
+								</div>
+							</div>
+						</td>
+						<td ></td>
+						<td style="width:30%;">
+							<div class="card">
+								<div class="cContainer">
+									<h3>Daniel Wong</h3>
+									<img src="z.jpg" class="image"><br><br>
+									<b>Member</b><br>
+									<p>Phone: 0123456789</p>
+									<p>Email: DW@GED.com</p>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+					
+			
+				<form action="/addemp" autocomplete="on" method = "POST">
+					<button type="submit" formaction="/addemp" class="button1" style="margin: 20px;">Add Employee</button><br>
+
+					<button type="submit" formaction="/GetEmp" class="button1" style="margin-bottom: 20px;">View Employee List</button>
+
+					</form>
+		<br>
+			<div class="content">
+			© 2022 GED. All rights reserved.
+			</div>
+		</body>
+
+	</font>
+</center>
+</html>
