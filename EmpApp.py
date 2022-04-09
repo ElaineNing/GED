@@ -106,7 +106,7 @@ def fetchdata():
             emp = cursor.fetchall()
             
             (emp_id, first_name, last_name, pri_skill, location, phone, ot, insurance, allowance) = emp[0]
-             image_url = show_image(custombucket)
+             #image_url = show_image(custombucket)#
              
             return render_template('GetEmpOutput.html', emp_id=emp_id, first_name=first_name, last_name=last_name, pri_skill=pri_skill, location=location, phone=phone, ot=ot, insurance=insurance, allowance=allowance)
         except Exception as e:
