@@ -15,7 +15,7 @@
 			left: 50%;
 			background: rgba(0, 0, 0, 0.5);
 			color: #f1f1f1;
-			width: 30%;
+			width: 70%;
 			text-align: center;
 			transform: translate(-50%, -50%);
 			padding: 20px;
@@ -80,6 +80,7 @@
 			
 				<form action="/addemp" autocomplete="on" method = "POST" enctype="multipart/form-data">
 
+				<div style="width: 40%;float: left;margin-right: 30px;margin-left: 95px">
 					<input type="number" class="input" name="emp_id" autofocus size="40" placeholder="Employee ID">
 
 					<input type="text" class="input" name="first_name" placeholder="First Name">
@@ -91,7 +92,8 @@
 					<input type="text" class="input" name="location" placeholder="Location">
 					
 					<input type="number" class="input" name="ot" placeholder="Overtime (OT) in hours">
-					
+					</div>
+					<div style="width: 40%;float: left;">
 					<select name="allowance" id="allowance" class="input">
 						<option value="None">None</option>
 						<option value="Food">Food Allowance</option>
@@ -114,6 +116,7 @@
 					<button type="submit" class="button1">Add Employee</button><br><br>
 
 					<button type="submit" formaction="/GetEmp" class="button1">View Employee List</button>
+					</div>
 				</form>
 				<!--<a href="/about">About Us</a>-->
 			</div>
