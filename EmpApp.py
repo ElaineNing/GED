@@ -105,7 +105,7 @@ def fetchdata():
             (emp_id, first_name, last_name, pri_skill, location, phone, ot, insurance, allowance) = emp[0]
              #image_url = show_image(custombucket)#
              
-            return render_template('GetEmpOutput.html', emp=emp)
+            return render_template('GetEmpOutput.html', emp_id, first_name, last_name, pri_skill, location, phone, ot, insurance, allowance)
         except Exception as e:
             return render_template('NotFound.html')
     else:
