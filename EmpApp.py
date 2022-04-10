@@ -120,14 +120,13 @@ def listemp():
     try:
         cursor = db_conn.cursor()
 
-        cursor.execute("SELECT * FROM GEDemployee")
-        listemp = cursor.fetchall()
-            
+        cursor.execute("SELECT * FROM employee")
+        getData = cursor.fetchall()
 
     except Exception as e:
             return str(e)
 
-    return render_template('about.html', listemp=listemp)
+    return render_template('ListAll.html', getData=getData)
                            
 
 
