@@ -94,25 +94,39 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=True)
 
 
-@app.route("/fetchdata", methods=['GET', 'POST'])
-def fetchdata():
-    if request.method == 'POST':
-        try:
-            emp_id = request.form['emp_id']
-            cursor = db_conn.cursor()
+#@app.route("/fetchdata", methods=['GET', 'POST'])
+#def fetchdata():
+#    if request.method == 'POST':
+#        try:
+#            emp_id = request.form['emp_id']
+#            cursor = db_conn.cursor()
             
-            fetch_sql = "SELECT * FROM GEDemployee WHERE emp_id = %s"
-            cursor.execute(fetch_sql,(emp_id))
-            emp = cursor.fetchall()
+#            fetch_sql = "SELECT * FROM GEDemployee WHERE emp_id = %s"
+#            cursor.execute(fetch_sql,(emp_id))
+#            emp = cursor.fetchall()
             
-            (emp_id, first_name, last_name, pri_skill, location, phone, ot, insurance, allowance) = emp[0]
+#            (emp_id, first_name, last_name, pri_skill, location, phone, ot, insurance, allowance) = emp[0]
              #image_url = show_image(custombucket)#
              
-            return render_template('GetEmpOutput.html', emp_id=emp_id, first_name=first_name, last_name=last_name, pri_skill=pri_skill, location=location, phone=phone, ot=ot, insurance=insurance, allowance=allowance)
-        except Exception as e:
-            return render_template('NotFound.html')
-    else:
-        return render_template('AddEmp.html', fetchdata=fetchdata)
+#            return render_template('GetEmpOutput.html', emp_id=emp_id, first_name=first_name, last_name=last_name, pri_skill=pri_skill, location=location, phone=phone, ot=ot, insurance=insurance, allowance=allowance)
+#        except Exception as e:
+#            return render_template('NotFound.html')
+#    else:
+#        return render_template('AddEmp.html', fetchdata=fetchdata)
+
+
+@app.route("/listdata", methods=['GET', 'POST'])
+def listemp():
+    try:
+        cursor = db_conn.cursor()
+
+        cursor.execute("SELECT * FROM GEDemployee")
+        getData = cursor.fetchall()
+
+    except Exception as e:
+            return str(e)
+
+    return render_template('ListAll.html', getData=getData)
 
 
 @app.route("/delete", methods=['GET', 'POST'])
