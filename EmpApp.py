@@ -117,7 +117,7 @@ def listemp():
     try:
         cursor = db_conn.cursor()
 
-        cursor.execute("SELECT * FROM employee")
+        cursor.execute("SELECT * FROM GEDemployee")
         getData = cursor.fetchall()
 
     except Exception as e:
