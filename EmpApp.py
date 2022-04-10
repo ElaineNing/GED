@@ -134,8 +134,7 @@ def delete():
     delete_emp = "DELETE FROM GEDemployee WHERE emp_id = %s"
     cursor.execute(delete_emp, (emp_id))
     db_conn.commit()
-    
-    
+    return render_template('ListAll.html')  
     
 
 
