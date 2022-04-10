@@ -90,9 +90,6 @@ def AddEmp():
     return render_template('AddEmpOutput.html', name=emp_name)
 
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80, debug=True)
-
 
 @app.route("/fetchdata", methods=['GET', 'POST'])
 def fetchdata():
@@ -141,3 +138,7 @@ def delete():
     
     
 
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=80, debug=True)
