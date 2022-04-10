@@ -75,6 +75,24 @@
 		    
 			text-align: center;
 	    }
+		
+		.button0 {
+			font-size: 18px;
+			color: #fff;
+			width: 20%;
+			background: #ff6d00;
+			border: none;
+			padding: 14px 20px;
+			font-weight: 700;
+			border-radius: 36px;
+			transition: 1s ease;
+		}
+		
+		.button0:hover {
+			background: transparent;
+			border: 2px solid white;
+			transition: 1s ease;
+		}
     </style>
 </head>
 
@@ -82,13 +100,12 @@
 
 <body>
     <form action="/fetchdata" method="post" class="find_employee">
-        <p>Enter Employee ID
+	    <b>Enter Employee ID</b>
             <input type="text" name="emp_id" autofocus>
-        </p>
+        
 
-        <button type="submit" class="button1"> Search </button>
-	    <br>
-            <button type="submit" formaction="/delete" class="button1">Remove this Employee</button>
+        <button type="submit" class="button0"> Search </button>
+            <button type="submit" formaction="/delete" class="button0">Remove this Employee</button>
     </form>
 <br><br>
     <table class="table_employee">
