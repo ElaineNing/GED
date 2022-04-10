@@ -52,17 +52,24 @@
             font-size: 18px;
             color: #fff;
         }
-
-        .find_employee button {
-            font-size: 16px;
-            background: #ff6d00;
-            border-radius: 36px;
-            width: 20%;
-            padding: 10px 10px;
-            transition: 1s ease;
-            border: none;
-            font-weight: 700;
-        }
+		
+		.button1 {
+			font-size: 18px;
+			color: #fff;
+			width: 50%;
+			background: #ff6d00;
+			border: none;
+			padding: 14px 20px;
+			font-weight: 700;
+			border-radius: 36px;
+			transition: 1s ease;
+		}
+		
+		.button1:hover {
+			background: transparent;
+			border: 2px solid white;
+			transition: 1s ease;
+		}
     </style>
 </head>
 
@@ -74,7 +81,7 @@
             <input type="text" name="emp_id" autofocus>
         </p>
 
-        <button type="submit"> Search </button>
+        <button type="submit" class="button1"> Search </button>
     </form>
 
     <table class="table_employee">
