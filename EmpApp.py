@@ -126,7 +126,7 @@ def listemp():
     except Exception as e:
             return str(e)
 
-    return render_template('ListAll.html', getData=getData)
+    return render_template('about.html', getData=getData)
 
 
 @app.route("/delete", methods=['GET', 'POST'])
