@@ -121,12 +121,15 @@ def listemp():
         cursor = db_conn.cursor()
 
         cursor.execute("SELECT * FROM GEDemployee")
-        getData = cursor.fetchall()
+        emp = cursor.fetchall()
+            
+            (emp_id, first_name, last_name, pri_skill, location, phone, ot, insurance, allowance) = emp[0]
 
     except Exception as e:
             return str(e)
 
-    return render_template('about.html', getData=getData)
+    return render_template('about.html', emp_id=emp_id, first_name=first_name, last_name=last_name, pri_skill=pri_skill, location=location, phone=phone, ot=ot, insurance=insurance, allowance=allowance)
+        
 
 
 @app.route("/delete", methods=['GET', 'POST'])
