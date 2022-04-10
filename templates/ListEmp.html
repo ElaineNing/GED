@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Employee</title>
+
+<style>
+
+        .main-hotair .content-wthree h1{
+            text-align: center;
+            color: #fff;
+        }
+
+        .box_toAdd {
+            text-align: center;
+            margin: 10% 10%;
+        }
+
+        .box_toAdd .to_add {
+            color: #fff;
+        }
+
+        .box_toAdd .to_add_button button{
+            font-size: 18px;
+            background: #ff6d00;
+            border-radius: 36px;
+            width: 50%;
+            padding: 14px 20px;
+            transition: 1s ease;
+            border: none;
+            font-weight: 700;
+        }
+
+        .list_data {
+            text-align: center;
+            margin-top: 10%;
+        }
+
+        .list_data button{
+            font-size: 18px;
+            background: #ff6d00;
+            border-radius: 36px;
+            width: 50%;
+            padding: 14px 20px;
+            transition: 1s ease;
+            border: none;
+            font-weight: 700;
+        }
+</style>
+
+</head>
+<body>
+<img src="{{url_for('~/static', filename='image.jpg')}}" />
+
+<div class="main-hotair">
+    <div class="content-wthree">
+        <h1>Welcome to Employee Management System</h1>
+    </div>
+</div>
+
+<div class="box_toAdd">
+    <p class="to_add">Proceed to Add Employee Page </p>
+
+<form action="/toadd" method="post" class="to_add_button">
+    <button type="submit">To employee</button>
+</form>
+
+</div>
+
+<form action="/listdata" method = "POST" class="list_data">
+    <button type="submit"> Proceed to list </button>
+</form>
+
+</body>
+</html>
