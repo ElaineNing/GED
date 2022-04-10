@@ -102,7 +102,7 @@ def fetchdata():
             cursor.execute(fetch_sql,(emp_id))
             emp = cursor.fetchall()
             
-            #(emp_id, first_name, last_name, pri_skill, location, phone, ot, insurance, allowance) = emp[0]
+            (emp_id, first_name, last_name, pri_skill, location, phone, ot, insurance, allowance) = emp[0]
              #image_url = show_image(custombucket)#
              
             return render_template('GetEmpOutput.html', emp=emp)
