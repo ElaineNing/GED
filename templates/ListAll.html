@@ -93,6 +93,23 @@
 			border: 2px solid white;
 			transition: 1s ease;
 		}
+		
+		.input {
+			outline: none;
+			font-weight: 700;
+			font-size: 16px;
+			color: #999;
+			text-align: left;
+			padding: 14px 20px;
+			margin-bottom: 15px;
+			width: 100%;
+			display: inline-block;
+			box-sizing: border-box;
+			background: #f7fafc;
+			border: 1px solid #e5e5e5;
+			transition: .3s ease;
+			border-radius: 36px;
+		}
     </style>
 </head>
 
@@ -100,7 +117,7 @@
 
 <body>
     <form action="/fetchdata" method="post" class="find_employee">
-	    <b>Enter Employee ID</b>
+	    <b style="font-size:16px;">Enter Employee ID</b>
             <input type="text" name="emp_id" autofocus>
         
 
