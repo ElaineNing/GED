@@ -1,86 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List Employee</title>
+    <meta charset="utf-8" />
+    <title>Employee's Information</title>
+    <style>
+		body{
+			background-image: url("https://ningjoydaniel-bucket.s3.amazonaws.com/Image/image.jpg");
+			background-repeat: no-repeat;
+			background-size: 100%;
+		}
 
-<style>
-        body {
-            background-image: url("https://ningjoydaniel-bucket.s3.amazonaws.com/Image/image.jpg");
-            background-repeat: no-repeat;
-            background-size: 100%;
-        }
-
-        .main-hotair .content-wthree h1{
+        .content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 30%;
             text-align: center;
-            color: #fff;
+            transform: translate(-50%, -50%);
+            padding: 20px;
         }
 
-        .box_toAdd {
-            text-align: center;
-            margin: 10% 10%;
-        }
-
-        .box_toAdd .to_add {
-            color: #fff;
-        }
-
-        .box_toAdd .to_add_button button{
-            font-size: 18px;
-            background: #ff6d00;
-            border-radius: 36px;
-            width: 50%;
-            padding: 14px 20px;
-            transition: 1s ease;
-            border: none;
+        h1 {
+            font-size: 23px;
             font-weight: 700;
-        }
-
-        .list_data {
+            color: #fff;
             text-align: center;
-            margin-top: 10%;
+            margin-bottom: 30px;
         }
-		
-		.button1 {
-			font-size: 18px;
-			color: #fff;
-			width: 50%;
-			background: #ff6d00;
-			border: none;
-			padding: 14px 20px;
-			font-weight: 700;
-			border-radius: 36px;
-			transition: 1s ease;
-		}
-		
-		.button1:hover {
-			background: transparent;
-			border: 2px solid white;
-			transition: 1s ease;
-		}
-</style>
 
+        .input {
+            outline: none;
+            font-weight: 700;
+            font-size: 16px;
+            color: #999;
+            text-align: left;
+            padding: 14px 20px;
+            margin-bottom: 15px;
+            width: 100%;
+            display: inline-block;
+            box-sizing: border-box;
+            background: #f7fafc;
+            border: 1px solid #e5e5e5;
+            transition: .3s ease;
+            border-radius: 36px;
+        }
+
+        .input:focus {
+            background: transparent;
+        }
+
+        .button1 {
+            font-size: 18px;
+            color: #fff;
+            width: 100%;
+            background: #ff6d00;
+            border: none;
+            padding: 14px 20px;
+            font-weight: 700;
+            border-radius: 36px;
+            transition: 1s ease;
+        }
+
+        .button1:hover {
+            background: transparent;
+            border: 2px solid white;
+            transition: 1s ease;
+        }
+    </style>
 </head>
-<body>
+<body style="text-align:center;font-family: arial" background-color="lightgrey" color="black" size="4">
 
-<div class="main-hotair">
-    <div class="content-wthree">
-        <h1>Welcome to Employee Management System</h1>
+    <video autoplay muted loop id="myVideo">
+        <source src="freelan.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+        <h1>GED Employee Information</h1>
+        <form>
+            <div class="input">
+                Employee ID:<br> {{ id }} <br><br>
+
+                First Name:<br> {{ fname }} <br><br>
+                
+                Last Name:<br> {{ lname }} <br><br>
+                
+                Primary Skills:<br> {{ interest }} <br><br>
+                
+                Location:<br> {{ location }} <br><br>
+
+                Overtime (OT) in hours:<br> {{ ot }} <br><br>
+
+                Allowance:<br> {{ allowance }} <br><br>
+                
+                Insurance:<br> {{ insurance }} <br><br>
+                
+                Image URL: <br> {{ image_url }} <br><br>
+            </div>
+
+            <button type="submit" formaction="/getemp" class="button1">Return to Employee List</button>
+        </form>
     </div>
-</div>
-
-<div class="box_toAdd">
-    <p class="to_add">Proceed to Add Employee Page </p>
-
-<form action="/listdata" method="post">
-    <button type="submit" class="button1"> Proceed to list </button>
-	<br>
-    <button type="submit" formaction="/" class="button1">To add employee</button>
-</form>
-
-</div>
-
 </body>
 </html>
