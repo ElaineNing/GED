@@ -33,7 +33,7 @@ def about():
 
 @app.route("/GetEmp", methods=['GET', 'POST'])
 def GetEmp():
-    return render_template('GetEmp.html', GetEmp=GetEmp)
+    return render_template('GetEmp.html')
 
 
 @app.route("/addemp", methods=['POST'])
